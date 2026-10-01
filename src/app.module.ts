@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { PrismaModule } from './prisma/prisma.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 /**
  * 根模块：组装全局配置、数据库、业务模块
@@ -13,6 +14,7 @@ import { PrismaModule } from './prisma/prisma.module';
       envFilePath: ['.env.development', '.env'],
     }),
     PrismaModule,
+    AuthModule,
   ],
 })
 export class AppModule {}
